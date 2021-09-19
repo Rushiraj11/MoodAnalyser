@@ -11,16 +11,14 @@ public class MoodAnalyser {
     }
     public static String message;
 
-
+    public MoodAnalyser() { // calling the constructor
+    }
     public MoodAnalyser(String message) {
         this.message = message;
         analyseMood();
 
     }
 
-    public MoodAnalyser() { // calling the constructor
-
-    }
 
     public String getMessage() {
         return message;
@@ -30,13 +28,25 @@ public class MoodAnalyser {
         this.message = message;
     }
 
+//    public static String analyseMood() {
+//
+//        if (message.toLowerCase().contains("sad")) {
+//            return "Sad";
+//        } else if (message.toLowerCase().contains("happy")) {
+//        }
+//        return "Happy";
+//    }
     public static String analyseMood() {
+        try {
+            if (message.toLowerCase().contains("sad")) {
+                return "Sad";
+            } else {
+                return "Happy";
+            }
 
-        if (message.toLowerCase().contains("sad")) {
-            return "Sad";
-        } else if (message.toLowerCase().contains("happy")) {
+        } catch (NullPointerException e) {
+            return "Happy";
         }
-        return "Happy";
     }
 }
 
