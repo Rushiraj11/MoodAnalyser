@@ -9,5 +9,34 @@ public class MoodAnalyser {
         }
         return "Happy";
     }
+    public static String message;
+
+
+    public MoodAnalyser(String message) {
+        this.message = message;
+        analyseMood();
+
+    }
+
+    public MoodAnalyser() {
+
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public static String analyseMood() {
+
+        if (message.toLowerCase().contains("sad")) {
+            return "Sad";
+        } else if (message.toLowerCase().contains("happy")) {
+        }
+        return "Happy";
+    }
 }
 
